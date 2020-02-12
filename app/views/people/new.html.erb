@@ -3,6 +3,9 @@
   <%= f.text_field :name %><br>
  
   <%= f.fields_for :addresses do |addr| %>
+  <fieldset>
+    <legend><%=addr.object.address_type%></legend>
+    <p>
     <%= addr.label :street_address_1 %>
     <%= addr.text_field :street_address_1 %><br>
  
@@ -20,6 +23,8 @@
  
     <%= addr.label :address_type %>
     <%= addr.text_field :address_type %><br>
+    </p>
+    </fieldset>
   <% end %>
  
   <%= f.submit %>
